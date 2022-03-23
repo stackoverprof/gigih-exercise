@@ -36,3 +36,34 @@
     transform: rotate(360deg);
   }
 }
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-input {
+  background: #fff2;
+  border: 1px solid #fff;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 24px;
+  width: 400px;
+  color: white;
+}
+.search-button {
+  height: 52px;
+  background: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin-left: 12px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.image-gif {
+  margin: 40px;
+  width: 400px;
+  height: 400px;
+}

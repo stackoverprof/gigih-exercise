@@ -1,58 +1,19 @@
 import React from "react";
+import Form from "../../components/Form";
+import Gif from "../../components/Gif";
 
 const Home = () => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const gif = {
+    id: "4HrBfVJJveBNS9ytSk",
+    title: "Nintendo Plotting GIF by Gaming GIFs",
+    uploadedDate: "2018-04-03 15:21:50",
+    url: "https://media4.giphy.com/media/4HrBfVJJveBNS9ytSk/200w.gif?cid=cb3f2bebpuo6jj0g5f9gfibjre2zzbb4yb1cfshtplanlrpw&rid=200w.gif&ct=g",
+    webp: "https://media4.giphy.com/media/4HrBfVJJveBNS9ytSk/giphy.webp?cid=cb3f2bebpuo6jj0g5f9gfibjre2zzbb4yb1cfshtplanlrpw&rid=giphy.webp&ct=g",
   };
   return (
     <header className="App-header">
-      <form onSubmit={handleSubmit} className="search-form">
-        <input
-          type="text"
-          className="search-input"
-          placeholder="Search something..."
-        />
-        <button type="submit" className="search-button">
-          SEARCH!
-        </button>
-      </form>
-      <img
-        src="https://media.giphy.com/media/Vh8pbGX3SGRwFDh3V0/source.gif"
-        alt=""
-        className="image-gif"
-      />
-      <style jsx>{`
-        .search-form {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-        .search-input {
-          background: #fff2;
-          border: 1px solid #fff;
-          padding: 10px 14px;
-          border-radius: 6px;
-          font-size: 24px;
-          width: 400px;
-          color: white;
-        }
-        .search-button {
-          height: 52px;
-          background: white;
-          border: none;
-          border-radius: 6px;
-          padding: 10px 14px;
-          margin-left: 12px;
-          font-weight: bold;
-          font-size: 16px;
-        }
-
-        .image-gif {
-          margin: 40px;
-          width: 400px;
-          height: 400px;
-        }
-      `}</style>
+      <Form />
+      <Gif title={gif.title} url={gif.url} />
     </header>
   );
 };
