@@ -1,20 +1,17 @@
 import React from "react";
 import Form from "../../components/Form";
 import Gif from "../../components/Gif";
+import DATA_GIFS from "../../data/gifs";
 
 const Home = () => {
-  const gif = {
-    id: "4HrBfVJJveBNS9ytSk",
-    title: "Nintendo Plotting GIF by Gaming GIFs",
-    uploadedDate: "2018-04-03 15:21:50",
-    url: "https://media4.giphy.com/media/4HrBfVJJveBNS9ytSk/200w.gif?cid=cb3f2bebpuo6jj0g5f9gfibjre2zzbb4yb1cfshtplanlrpw&rid=200w.gif&ct=g",
-    webp: "https://media4.giphy.com/media/4HrBfVJJveBNS9ytSk/giphy.webp?cid=cb3f2bebpuo6jj0g5f9gfibjre2zzbb4yb1cfshtplanlrpw&rid=giphy.webp&ct=g",
-  };
-
+  const data = DATA_GIFS;
+  const filtered_data = data.filter((item) => item.rating === "g");
   return (
     <header className="App-header">
       <Form />
-      <Gif title={gif.title} url={gif.url} />
+      {filtered_data.map((item, i) => (
+        <Gif title={item.title} url={item.url} key={i} />
+      ))}
     </header>
   );
 };
