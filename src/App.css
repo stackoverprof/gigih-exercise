@@ -19,7 +19,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -37,11 +37,20 @@
   }
 }
 
+.gifs-area {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
 .search-form {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 60px 0;
 }
+
 .search-input {
   background: #fff2;
   border: 1px solid #fff;
