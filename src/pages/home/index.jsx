@@ -21,7 +21,7 @@ class Home extends Component {
     e.preventDefault();
 
     const params = {
-      api_key: process.env.REACT_APP_SPOTIFY_CLIENT_ID,
+      api_key: process.env.REACT_APP_GIPHY_CLIENT_ID,
       q: this.state.searchQuery,
       limit: 15,
     };
