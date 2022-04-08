@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
 	return (
-		<nav className="w-full h-24 flex-cc bg-dark">
+		<nav className="flex-cc w-full h-24 bg-dark">
 			<div className="container flex-bc py-6 w-full">
 				<div className="flex-cc">
 					<h1 className="text-2xl font-semibold">Gigih Exercise</h1>

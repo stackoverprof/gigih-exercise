@@ -1,17 +1,14 @@
 import React from 'react';
-import './App.css';
 import './core/style/tailwind.css';
 import './core/style/typefaces.css';
 import Home from './pages/Home';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Trending from './pages/Trending';
-import Navbar from './components/Navbar';
 
 const App = () => {
 	return (
-		<div className="App">
+		<div className="flex-sc col w-full">
 			<Router>
-				<Navbar />
 				<Switch>
 					<Route path="/" exact>
 						<Home />

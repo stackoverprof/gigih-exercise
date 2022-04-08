@@ -4,6 +4,7 @@ import Gif from '../../components/Gif';
 import axios from 'axios';
 import { setSearchResult, useHome } from '../../core/redux/reducer/home';
 import { useDispatch } from 'react-redux';
+import MainLayout from 'src/components/Layouts/MainLayout';
 
 const Home = () => {
 	const { searchResult } = useHome();
@@ -35,14 +36,14 @@ const Home = () => {
 	};
 
 	return (
-		<header className="App-header">
+		<MainLayout title="Home" className="container flex-sc col">
 			<SearchBar value={searchQuery} onChange={onChange} onSubmit={onSubmit} />
-			<div className="container grid grid-cols-3 gap-4">
+			<div className="grid grid-cols-3 gap-4 px-24 w-full ">
 				{searchResult.map((item) => (
 					<Gif title={item.title} url={item.images.fixed_width.url} key={item.id} />
 				))}
 			</div>
-		</header>
+		</MainLayout>
 	);
 };
 

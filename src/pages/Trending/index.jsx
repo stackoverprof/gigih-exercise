@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import MainLayout from 'src/components/Layouts/MainLayout';
 import Gif from '../../components/Gif';
 
 const Trending = () => {
@@ -24,16 +25,16 @@ const Trending = () => {
 	}, []);
 
 	return (
-		<div className="flex-sc col bg-base">
+		<MainLayout title="Trending" className="container flex-sc col">
 			<h1 className="my-16 text-4xl font-bold">
 				<span className="text-info">#Trending</span> GIFs
 			</h1>
-			<div className="container grid grid-cols-3 gap-4">
+			<div className="grid grid-cols-3 gap-4 px-24 w-full">
 				{trendingResult?.map((item) => (
 					<Gif title={item.title} url={item.images.fixed_width.url} key={item.id} />
 				))}
 			</div>
-		</div>
+		</MainLayout>
 	);
 };
 
