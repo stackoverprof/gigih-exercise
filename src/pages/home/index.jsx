@@ -2,10 +2,15 @@ import React, { Component, useState } from "react";
 import SearchBar from "../../components/SearchBar";
 import Gif from "../../components/Gif";
 import axios from "axios";
+import { setSearchResult, useHome } from "../../core/redux/reducer/home";
+import { useDispatch } from "react-redux";
 
 const Home = () => {
-  const [searchResult, setSearchResult] = useState([]);
+  const { searchResult } = useHome();
   const [searchQuery, setSearchQuery] = useState("");
+
+  const dispatch = useDispatch();
+
   const onChange = (e) => {
     setSearchQuery(e.target.value);
   };
@@ -26,7 +31,7 @@ const Home = () => {
       .then((res) => res.data.data)
       .catch((err) => console.error(err));
 
-    setSearchResult(result);
+    dispatch(setSearchResult(result));
   };
 
   return (
