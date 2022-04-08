@@ -19,15 +19,15 @@ const Trending = () => {
         .then((res) => res.data.data)
         .catch((err) => console.error(err));
 
-      console.log(result);
-
       setTrendingResult(result);
     })();
   }, []);
 
   return (
     <div className="bg-base flex-sc col">
-      <h1 className="text-4xl font-bold my-16">Trending GIFs</h1>
+      <h1 className="text-4xl font-bold my-16">
+        <span className="text-info">#Trending</span> GIFs
+      </h1>
       <div className="container grid grid-cols-3 gap-4">
         {trendingResult?.map((item, i) => (
           <Gif title={item.title} url={item.images.fixed_width.url} key={i} />

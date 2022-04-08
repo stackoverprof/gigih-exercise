@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import SearchBar from "../../components/SearchBar";
 import Gif from "../../components/Gif";
 import axios from "axios";
