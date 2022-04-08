@@ -1,18 +1,18 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { useSelector } from "react-redux";
+import { createSlice } from '@reduxjs/toolkit';
+import { useSelector } from 'react-redux';
 
 const initialState = {
-  searchResult: [],
+	searchResult: [],
 };
 
 const ReduxSlice = createSlice({
-  name: "HOME",
-  initialState,
-  reducers: {
-    setSearchResult: (state, action) => {
-      state.searchResult = action.payload;
-    },
-  },
+	name: 'HOME',
+	initialState,
+	reducers: {
+		setSearchResult: (state, action) => {
+			state.searchResult = action.payload;
+		},
+	},
 });
 
 export const { setSearchResult } = ReduxSlice.actions;
