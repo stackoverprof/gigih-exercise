@@ -39,7 +39,11 @@ const Home = () => {
       <SearchBar value={searchQuery} onChange={onChange} onSubmit={onSubmit} />
       <div className="container grid grid-cols-3 gap-4">
         {searchResult.map((item, i) => (
-          <Gif title={item.title} url={item.images.fixed_width.url} key={i} />
+          <Gif
+            title={item.title}
+            url={item.images.fixed_width.url}
+            key={item.id}
+          />
         ))}
       </div>
     </header>

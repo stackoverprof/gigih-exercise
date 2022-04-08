@@ -30,7 +30,11 @@ const Trending = () => {
       </h1>
       <div className="container grid grid-cols-3 gap-4">
         {trendingResult?.map((item, i) => (
-          <Gif title={item.title} url={item.images.fixed_width.url} key={i} />
+          <Gif
+            title={item.title}
+            url={item.images.fixed_width.url}
+            key={item.id}
+          />
         ))}
       </div>
     </div>
