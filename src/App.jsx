@@ -1,10 +1,24 @@
 import "./App.css";
-import Home from "./pages/home";
-
+import "./core/style/tailwind.css";
+import "./core/style/typefaces.css";
+import Home from "./pages/Home";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Trending from "./pages/Trending";
+import Navbar from "./components/Navbar";
 function App() {
   return (
     <div className="App">
-      <Home />
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route path="/" exact>
+            <Home />
+          </Route>
+          <Route path="/trending" exact>
+            <Trending />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }

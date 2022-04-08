@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import SearchBox from "../../components/SearchBox";
+import SearchBar from "../../components/SearchBar";
 import Gif from "../../components/Gif";
 import axios from "axios";
 
@@ -25,24 +25,26 @@ class Home extends Component {
       q: this.state.searchQuery,
       limit: 15,
     };
+
     const result = await axios
       .get("https://api.giphy.com/v1/gifs/search", {
         params,
       })
       .then((res) => res.data.data)
       .catch((err) => console.error(err));
+
     this.setState({ searchResult: result });
   };
 
   render() {
     return (
       <header className="App-header">
-        <SearchBox
+        <SearchBar
           value={this.state.searchQuery}
           onChange={this.onChange}
           onSubmit={this.onSubmit}
         />
-        <div className="gifs-area">
+        <div className="container grid grid-cols-3 gap-4">
           {this.state.searchResult.map((item, i) => (
             <Gif title={item.title} url={item.images.fixed_width.url} key={i} />
           ))}
